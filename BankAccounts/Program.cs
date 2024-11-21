@@ -14,7 +14,7 @@ namespace BankAccounts
     {
         static void Main(string[] args)
         {
-            string xmlFilePath = "Saving/bankData.xml";
+            string xmlFilePath = "bankData.xml";
             if (File.Exists(xmlFilePath))
                 XmlBankDataSerializer.LoadBankData();
             MainMenu menu = new MainMenu();

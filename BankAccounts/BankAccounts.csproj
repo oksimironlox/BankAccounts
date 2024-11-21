@@ -46,6 +46,7 @@
     <Compile Include="BankOperations\DisplayInfo.cs" />
     <Compile Include="BankOperations\Model\Account.cs" />
     <Compile Include="BankOperations\Model\Bank.cs" />
+    <Compile Include="Menu\AccountsMenu.cs" />
     <Compile Include="Menu\ConsoleHelper.cs" />
     <Compile Include="Menu\MainMenu.cs" />
     <Compile Include="Menu\Model\Menu.cs" />
@@ -56,6 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Saving\bankData.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

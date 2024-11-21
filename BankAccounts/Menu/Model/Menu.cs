@@ -13,6 +13,6 @@ namespace BankAccounts.Menu
         void MenuSelectPrev(List<MenuItem> menu);
         void Execute(string commandId);
         void Menu();
-
+        void Menu(string commandId);
     }
 }

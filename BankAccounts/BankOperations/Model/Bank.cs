@@ -26,5 +26,15 @@ namespace BankAccounts.BankOperations.Model
             Accounts.Add(account);
         }
 
+        public static Account GetAccount(int id)
+        {
+            return Accounts[id];
+        }
+
+        public static void Transaction(int idWithdrawal, int idAdding, float sum) 
+        {
+            if(Accounts[idWithdrawal].Withdrawal(sum))
+                Accounts[idAdding].Adding(sum);
+        }
     }
 }

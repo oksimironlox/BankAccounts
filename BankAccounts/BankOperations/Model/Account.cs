@@ -8,9 +8,9 @@ namespace BankAccounts.BankOperations.Model
 {
     internal class Account
     {
-        private static int nextAccountId = 0;
+        private static int nextAccountId = -1;
         private int IdAccount { get; set; }
-        private int Balance { get; set; }
+        private float Balance { get; set; }
         public Account() 
         {
             nextAccountId++;
@@ -32,7 +32,7 @@ namespace BankAccounts.BankOperations.Model
             return IdAccount;
         }
 
-        public int getBalance()
+        public float getBalance()
         {
             return Balance;
         }
@@ -42,5 +42,19 @@ namespace BankAccounts.BankOperations.Model
             return nextAccountId;
         }
 
+        public bool Withdrawal(float sum)
+        {
+            if(Balance == 0) 
+            {
+                return false;
+            }
+            Balance -= sum;
+            return true;
+        }
+
+        public void Adding(float sum)
+        {
+            Balance += sum;
+        }
     }
 }

@@ -65,14 +65,14 @@ namespace BankAccounts.Menu
                     DisplayInfo.DisplayAddAccount();
                     break;
                 case OutputAccountBalance:
-                    //OperationsXML.DisplayInfoCustomers();
+                    AccountsMenu accountsMenu = new AccountsMenu();
+                    accountsMenu.Menu(commandId);
                     break;
                 case TransferFunds:
-                   /* HelperMenu menu = new HelperMenu();
-                    menu.Menu();*/
+                    AccountsMenu accountsMenu2 = new AccountsMenu();
+                    accountsMenu2.Menu(commandId);
                     break;
                 case "exit":
-                    XmlBankDataSerializer.SaveBankData();
                     break;
             }
         }
@@ -109,10 +109,16 @@ namespace BankAccounts.Menu
                         Console.WriteLine("Хотите продолжить? y/n");
                         string answer = Console.ReadLine();
                         exit = answer == "n" || answer == "no";
-
+                        
                         break;
                 }
             } while (!exit);
+            XmlBankDataSerializer.SaveBankData();
+        }
+
+        public void Menu(string commandId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

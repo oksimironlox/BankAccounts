@@ -13,7 +13,7 @@ namespace BankAccounts.Saving
 {
     internal static class XmlBankDataSerializer
     {
-        private static string xmlFilePath = "Saving/bankData.xml";
+        private static string xmlFilePath = "bankData.xml";
 
         public static void SaveBankData()
         {
@@ -53,7 +53,7 @@ namespace BankAccounts.Saving
                     foreach (Account account in accounts)
                     {
                         Bank.AddAccount(account);
-                        account.setNextAccountId(account.getNextAccountId());
+                        account.setNextAccountId(accounts.Max(a => a.getIdAccount()));
                     }
                     
 
